@@ -7,16 +7,16 @@ PREGUNTA = 0
 Llista = {}
 
 
-while Pregunta != 4:
-   Pregunta = int(input("Que quieres hacer? 1- Añadir, 2- Eliminar, 3- Listar. Si quieres salir pulsa cualquier numero diferente a los ya mencionados : "))
-   if Pregunta == Anyadir:
-       anyade= input("Escribe el nombre del libro: ")
-       anyade2= input("Escribe el nom del autor: ")
-       Llista[anyade] = anyade2
-   else:
-       if Pregunta == Eliminar:
-           elimina = input("Escribe el nombre del libro que vas a eliminar: ")
-           Llista.pop(elimina)
-       else:
-           if Pregunta == Listar:
-               print(Llista)
+while PREGUNTA != 4:
+    PREGUNTA = int(input("Que quieres hacer? 1- Añadir, 2- Eliminar, 3- Listar. Si quieres salir pulsa cualquier numero diferente a los ya mencionados : "))
+    if PREGUNTA == 1:
+        anyade= input("Escribe el nombre del libro: ")
+        Llista.append(anyade)
+
+    if PREGUNTA == 2:
+        elimina = input("Escribe el nombre del libro que vas a eliminar: ")
+        Llista.remove(elimina)      
+    else:
+            print("No hay libros por eliminar")
+    if PREGUNTA == 3:
+        print(Llista)
