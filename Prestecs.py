@@ -20,3 +20,10 @@ while Pregunta != 4:
        else:
            if Pregunta == Listar:
                print(Llista)
+               if Pregunta == Anyadir:
+                    anyade= input("Escribe el nombre del libro: ")
+                    anyade2= input("Escribe el nom del autor: ")
+                    Llista[anyade] = anyade2
+               else:
+                   if Pregunta == Listar:
+                       print(Llista)
