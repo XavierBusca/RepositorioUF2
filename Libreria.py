@@ -1,14 +1,14 @@
-Anyadir = 1
-Eliminar = 2
-Listar = 3
-Pregunta = 0
+ANYADIR = 1
+ELIMINAR = 2
+LISTAR = 3
+PREGUNTA = 0
 
 
 Llista = {}
 
 
 while Pregunta != 4:
-   Pregunta = int(input("Que quieres hacer? 1- Añadir, 2- Eliminar, 3- Listar: "))
+   Pregunta = int(input("Que quieres hacer? 1- Añadir, 2- Eliminar, 3- Listar. Si quieres salir pulsa cualquier numero diferente a los ya mencionados : "))
    if Pregunta == Anyadir:
        anyade= input("Escribe el nombre del libro: ")
        anyade2= input("Escribe el nom del autor: ")
