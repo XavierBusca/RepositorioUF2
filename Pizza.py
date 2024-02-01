@@ -13,7 +13,6 @@ while True:
             print("Has pedido una pizza 4 quesos. ")
             pizza.append(Comandes)
             TiposPizza[0].append(Comandes)
-            T
         elif Comandes == 2:
             print("Has pedido una pizza BBQ. ")
             TiposPizza[1].append(Comandes)
