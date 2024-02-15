@@ -1,74 +1,92 @@
 '''
-Es vol fer un gestor de registre de temperatures preses setmanalment per un observatori. 
-Es pressuposa que el programa es posa en marxa a l’inici de l’any (1 de gener) i al principi 
-de cada setmana. Al llarg de 52 setmanes que té un any, es van enregistrant les 
-temperatures mesurades cada dia de la setmana anterior (o sigui, set en total cada vegada). 
-Cada cop que es fa un registre, sabent que ha passat una setmana, el programa calcula
-automàticament quin dia i mes és l’actual. A partir d’aquestes dades, és possible consultar 
-en qualsevol moment quina ha estat la temperatura mitjana i la diferència entre el valor 
-màxim i mínim enregistrats. En fer-ho, la data actual també es mostra en pantalla.
-
-Totes aquestes accions es porten a terme usant un menú. 
-Evidentment, l’aplicació ha de ser prou robusta com per tractar casos erronis (per exemple, consultar valors quan encara no hi ha cap data enregistrada, o intentar registrar com a temperatura valors de tipus incorrecte).
-
-Per deixar més clar el comportament esperat, tot seguit es mostra un prototip del que s’esperaria mostrar amb la seva execució:
-
-Benvingut al registre de temperatures 
-------------------------------------- 
-[RT] Registrar temperatures setmanals. 
-[MJ] Consultar temperatura mitjana. 
-[DF] Consultar diferència màxima. 
-[FI] Sortir. 
-Opció: MJ 
-No hi ha temperatures registrades. 
-
- Benvingut al registre de temperatures 
-------------------------------------- 
-[RT] Registrar temperatures setmanals. 
-[MJ] Consultar temperatura mitjana. 
-[DF] Consultar diferència màxima. 
-[FI] Sortir. 
-Opció: RT 
-Escriu les temperatures d'aquesta setmana: 
-20,5 21,1 21 21,7 20,9 20,6 19,9 
-
- Benvingut al registre de temperatures 
-------------------------------------- 
-[RT] Registrar temperatures setmanals. 
-[MJ] Consultar temperatura mitjana. 
-[DF] Consultar diferència màxima. 
-[FI] Sortir. 
-Opció: MJ 
-Fins avui 8 de gener la mitjana ha estat de 20.814285 graus. 
-
- Benvingut al registre de temperatures 
-------------------------------------- 
-[RT] Registrar temperatures setmanals. 
-[MJ] Consultar temperatura mitjana. 
-[DF] Consultar diferència màxima. 
-[FI] Sortir. 
-Opció: DF 
-Fins avui 8 de gener la diferència màxima ha estat de 1.8000011 graus. 
-
- Benvingut al registre de temperatures 
-------------------------------------- 
-[RT] Registrar temperatures setmanals. 
-[MJ] Consultar temperatura mitjana. 
-[DF] Consultar diferència màxima. 
-[FI] Sortir.
-Opció: FI
-
-
-Què heu de fer?
-
-Entregar un document on feu la descomposició per nivells fent servir el disseny top down, dividint el problema en subproblemes fins arribar a un nivell on aquests ja siguin simples i resolguin una tasca molt concreta i autocontinguda.
-
+CORRECCIÓN
 '''
+#Registro de temperaturas
+temperaturas = []
+mes = 1
+dia = 1
 
-rt = []
-mj = []
-df = []
-fi = []
+# Problema general
+def inici():
+    ...
 
-def temperaturas():
-    for temp in rt:
+# Primer nivel de descomposicion
+def mostrar_menu():
+    ...
+
+def tractar_opcion():
+    ...
+
+# Segundo nivel de descomposicion
+def registro_temperaturas_semanales():
+    ...
+
+def mostrar_media():
+    ...
+
+def mostrar_diferencia():
+    ...
+
+def finalizar_ejecucion():
+    ...
+
+# Tercer nivel de descomposicion
+def leer_temperaturas_teclado():
+    lector = input("Escribe las temperaturas de esta semana: ")
+    for temperatura in lector.split():
+        temperaturas.append(float(temperatura.replace(',','.')))
+
+def calcular_media():
+    suma = 0
+    for temperatura in temperaturas:
+        suma += temperatura
+    return suma/len(temperaturas)
+
+def calcular_diferencia():
+    #temperatura minima
+    #temperatura maxima
+    #recorrer todas las temperaturas e ir modificando
+
+def mostrar_fecha():
+    print(dia, "de", end=' ')
+    if mes == 1:
+        print("Enero")
+    elif mes == 2:
+        print("Febrero")
+    elif mes == 3:
+        print("Marzo")
+    elif mes == 4:
+        print("Abril")
+    elif mes == 5:
+        print("Mayo")
+    elif mes == 6:
+        print("Junio")
+    elif mes == 7:
+        print("Julio")
+    elif mes == 8:
+        print("Agosto")
+    elif mes == 9:
+        print("Septiembre")
+    elif mes == 10:
+        print("Octubre")
+    elif mes == 11:
+        print("Noviembre")
+    elif mes == 12:
+        print("Diciembre")
+
+def incrementar_fecha():
+    dias_mes_actual = 0
+    if mes == 2:
+        dias_mes_actual = 28
+    elif mes == 4 or mes == 6 or mes == 9 or mes == 11:
+        dias_mes_actual = 30
+    else:
+        dias_mes_actual = 31
+    dia += 7
+    if dia > dias_mes_actual:
+        dia -= dias_mes_actual
+        mes += 1
+        if mes > 12:
+            mes = 1
+
+mostrar_fecha()

@@ -1,0 +1,123 @@
+CREATE TABLE Producte (
+    PROD_NUM int(6) PRIMARY KEY,
+    descripcio varchar(30)
+);
+
+CREATE TABLE Detall (
+    COM_NUM smallint(4),
+    DETALL_NUM smallint(4) PRIMARY KEY,
+    PROD_NUM int(6),
+    PREU_VENDA decimal(8,2),
+    quantitat int(8),
+    import decimal(8,2),
+    FOREIGN KEY (PROD_NUM) REFERENCES Producte(PROD_NUM)
+);
+
+CREATE TABLE Client (
+    client_cod int(6) PRIMARY KEY,
+    nom varchar(45),
+    adreca varchar(40),
+    ciutat varchar(30),
+    estat varchar(2),
+    codi_postal varchar(9),
+    area smallint(3),
+    telefon varchar(9),
+    repr_cod smallint(4),
+    limit_credit decimal(9,2),
+    observacions text
+);
+
+CREATE TABLE Comanda (
+    COM_NUM smallint(4) PRIMARY KEY,
+    COM_DATA Date,
+    COM_TIPUS char(1),
+    client_cod int(6),
+    DATA_TRAMESA Date,
+    TOTAL decimal(8,2),
+    FOREIGN KEY (client_cod) REFERENCES Client(client_cod)
+);
+
+CREATE TABLE Dept(
+    dept_no tinyint(2) PRIMARY KEY,
+    DNOM varchar(14),
+    LOC varchar(14)
+);
+
+CREATE TABLE EMP(
+    EMP_NO smallint(4) PRIMARY KEY,
+    cognom varchar(10),
+    ofici varchar(10),
+    cap smallint(4),
+    data_alta Date,
+    salari int,
+    comissio int,
+    dept_no tinyint(2),
+    FOREIGN KEY (dept_no) REFERENCES Dept(dept_no)
+);
+
+# VideoClub
+
+CREATE TABLE PELICULA (
+    CodiPeli INT(5) PRIMARY KEY,
+    Titol VARCHAR(15),
+    CodiGenere INT(5),
+    SegonaPart INT(5),
+    CodiActor INT(5),
+    FOREIGN KEY (CodiGenere) REFERENCES Genere(CodiGenere),
+    FOREIGN KEY (CodiActor) REFERENCES Actor(CodiActor)
+);
+
+CREATE TABLE Genere (
+    CodiGenere INT(5) PRIMARY KEY,
+    Descripcio VARCHAR(15)
+);
+
+CREATE TABLE Copia (
+    CodiCopia INT(5) PRIMARY KEY,
+    CodiPeli INT(5),
+    FOREIGN KEY (CodiPeli) REFERENCES PELICULA(CodiPeli)
+);
+
+CREATE TABLE Actor (
+    CodiActor INT(5) PRIMARY KEY,
+    Nom VARCHAR(15)
+);
+
+CREATE TABLE INTERPRETADA(
+    CodiPeli INT(5),
+    CodiActor INT(5),
+    FOREIGN KEY (CodiPeli) REFERENCES PELICULA(CodiPeli),
+    FOREIGN KEY (CodiActor) REFERENCES PELICULA(CodiActor)
+);
+
+CREATE TABLE Prestec(
+    CodiPeli INT(5) PRIMARY KEY,
+    CodiCopia INT(5),
+    Data DATE,
+    DNI CHAR(10),
+    FOREIGN KEY (DNI) REFERENCES Client(DNI)
+);
+
+CREATE TABLE Client(
+    DNI CHAR(10) PRIMARY KEY,
+    Nom VARCHAR(20),
+    Adreça VARCHAR(20),
+    telefon CHAR(9)
+);
+
+CREATE TABLE Factura(
+    CodiFactura INT(5) PRIMARY KEY,
+    Data DATE,
+    import DECIMAL(9,2),
+    DNI char(10),
+    FOREIGN KEY (DNI) REFERENCES Client(DNI)
+);
+
+CREATE TABLE DetallFactura(
+    CodiFactura INT(5) PRIMARY KEY,
+    LiniaFactura INT(5),
+    Descripcio VARCHAR(15),
+    PreuUnitari DECIMAL(9,2),
+    NumeroUnitats INT(5),
+    FOREIGN KEY (CodiFactura) REFERENCES Factura(CodiFactura)
+);
