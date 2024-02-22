@@ -121,3 +121,5 @@ CREATE TABLE DetallFactura(
     NumeroUnitats INT(5),
     FOREIGN KEY (CodiFactura) REFERENCES Factura(CodiFactura)
 );
+
+

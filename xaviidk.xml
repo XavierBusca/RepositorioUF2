@@ -1,0 +1,16 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Fitxatge de Messi amb l’Inter de Miami</title>
+  <link href="http://example.com/messi-inter-miami"/>
+  <updated>2024-02-19T12:00:00Z</updated>
+  <author>
+    <name>Author Name</name>
+  </author>
+  <id>http://example.com/messi-inter-miami</id>
+  <entry>
+    <title>Detalls del fitxatge de Messi</title>
+    <link href="http://example.com/messi-inter-miami/news/1"/>
+    <id>http://example.com/messi-inter-miami/news/1</id>
+    <updated>2024-02-19T12:05:00Z</updated>
+    <summary>Messi fitxa pel Miami. Detalls...</summary>
+  </entry>
+</feed>
