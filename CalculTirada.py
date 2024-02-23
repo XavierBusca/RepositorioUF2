@@ -17,9 +17,33 @@ Es parteix de la descomposició del problema següent, que haureu de seguir per 
 Generar tirades.Calcular probabilitat.
 A mode de guia, la sortida hauria de ser més o menys com es mostra tot seguit:
 
-'''Escriu el valor a calcular [2 - 12]. 
+Escriu el valor a calcular [2 - 12]. 
 18 
 El valor no és entre 2 i 12. 
 5 
 La probabilitat es 27.0%.
 '''
+CARES_DAU: int = 6
+
+llista_tirades: list[int] = [0] * (CARES_DAU * 2 - 1)
+
+def CalculTirada() -> None:
+    llegir_valor()
+    generar_tirades()
+    mostrar_probabilitat()
+
+def generar_tirades() -> None:
+    i:int = 1
+
+    while i <= CARES_DAU:
+        j:int = 1
+        while j <= CARES_DAU:
+            llista_tirades[i + j -2] += 1
+            j += 1
+        i += 1
+def llegir_valor() -> None:
+    valor: int = int(input("Escriu el valor a calcular [2 -12] .\n"))
+    while not valor_es_correcto(valor):
+        valor = input()
+
+    return valor
