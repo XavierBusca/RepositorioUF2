@@ -2,7 +2,7 @@
 Descompon aquest codi en funcions més petites per millorar la seva modularitat i reutilització. 
 
 Pista: Volem poder moure'ns per una graella bidimensional.
-
+.
 Codi Python:
 '''
 
