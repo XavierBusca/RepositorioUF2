@@ -1,4 +1,3 @@
-
 fun sumar(a: Int, b: Int): Int {
     return a + b
 }
@@ -18,4 +17,5 @@ fun dividir(a: Int, b: Int): Int? {
 println(sumar)
 println(restar)
 println(multiplicar)
-println(dividir)
+println(dividir)    
+
