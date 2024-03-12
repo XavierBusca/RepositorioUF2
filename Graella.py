@@ -5,6 +5,7 @@ Pista: Volem poder moure'ns per una graella bidimensional.
 .
 Codi Python:
 '''
+coordenada = (0, 0)
 
 class GraellaBidimensional:
     def __init__(self, x, y):
