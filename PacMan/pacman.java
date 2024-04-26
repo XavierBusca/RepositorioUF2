@@ -2,6 +2,9 @@ package PacMan;
 
 class Pacman{
 
+    private int newPosX;
+    private int newPosY;
+    
     public int move(int newPosX, int newPosY);
     
     public int pickupBola();
