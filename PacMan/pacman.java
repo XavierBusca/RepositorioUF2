@@ -4,13 +4,11 @@ class Pacman{
 
     private int newPosX;
     private int newPosY;
-    
+    private int vidas;
+    private int puntuacion;
+
     public int move(int newPosX, int newPosY);
     
-    public int pickupBola();
-
-    public int pickupBolaEspecial();
-
     public int moveY
     public int moveX
 
@@ -28,4 +26,18 @@ class Pacman{
     public moureesquerra(int moveX){
         this.moveX -= 1;
     }
+
+    public pickupbola(){
+
+    }
+    public pickupBolaEspecial(){
+        
+    }
+    public loseLife(){
+        
+    }
+    public detectColisionFantasma(Fantasma fantasma){
+        
+    }
+
 }
