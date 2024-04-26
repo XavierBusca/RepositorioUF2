@@ -1,8 +1,10 @@
+package PacMan;
+
 class Pacman{
 
-    private int move(int newPosX, int newPosY);
+    public int move(int newPosX, int newPosY);
     
-    private int pickupBola();
+    public int pickupBola();
 
-    private int pickupBolaEspecial();
+    public int pickupBolaEspecial();
 }
