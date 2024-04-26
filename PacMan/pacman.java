@@ -9,8 +9,8 @@ class Pacman{
 
     public int move(int newPosX, int newPosY);
     
-    public int moveY
-    public int moveX
+    public int moveY;
+    public int moveX;
 
     public moureadalt(int moveY){
         this.moveY += 1;
