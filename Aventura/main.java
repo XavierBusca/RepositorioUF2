@@ -23,17 +23,17 @@ abstract class ElementoJuego {
     }
 }
 
-// Clase concreta per representar las armas
+// Clase per representar las armas
 class Arma extends ElementoJuego {
-    private int daño;
+    private int danyo;
 
-    public Arma(String nombre, String tipo, int daño) {
+    public Arma(String nombre, String tipo, int danyo) {
         super(nombre, tipo);
-        this.daño = daño;
+        this.danyo = danyo;
     }
 
-    public int getDaño() {
-        return daño;
+    public int getDanyo() {
+        return danyo;
     }
 }
 
@@ -52,16 +52,16 @@ class Armadura extends ElementoJuego {
 }
 
 // Clase per representar las pocions
-class Poción extends ElementoJuego {
-    private int curación;
+class Pocion extends ElementoJuego {
+    private int curacion;
 
-    public Poción(String nombre, String tipo, int curación) {
+    public Pocion(String nombre, String tipo, int curacion) {
         super(nombre, tipo);
-        this.curación = curación;
+        this.curacion = curacion;
     }
 
-    public int getCuración() {
-        return curación;
+    public int getCuracion() {
+        return curacion;
     }
 }
 
@@ -117,7 +117,7 @@ class Personaje {
         // Implementacio del metoda atacar
     }
 
-    public void recibirDanyo(int daño) {
+    public void recibirDanyo(int danyo) {
         // Implementacio del metodo recibirDanyo
     }
 
@@ -150,17 +150,6 @@ class GestorElementosJuego {
 // Clase per gestionar els errors y excepcions
 class GestorErrores {
     public void manejarExcepcion(Exception e) {
-        // Implementacio del metodo manejarExcepcion
-    }
-
-    public void registrarError(String mensaje) {
-        // Implementacio del metodo registrarError
-    }
-}
-
-// Clase per carregar els personajes desde XML
-class CargadorXML {
-    public List<Personaje> cargarPersonajes(String rutaXML) {
-        // Implementacio del metodo cargarPersonajes
+        System.out.println("Hi ha hagut un error.");
     }
 }
