@@ -14,3 +14,13 @@ public class RobotApp extends JFrame {
         setLayout(new BorderLayout());
 
         robot = new Robot();
+
+        JPanel controlPanel = new JPanel();
+        AdelanteButton = new JButton("Moure Endevant");
+        AtrasButton = new JButton("Moure Enrere");
+        GirarEButton = new JButton("Girar Esquerra");
+        GirarDButton = new JButton("Girar Dreta");
+        controlPanel.add(AdelanteButton);
+        controlPanel.add(AtrasButton);
+        controlPanel.add(GirarEButton);
+        controlPanel.add(GirarDButton);
